@@ -4,9 +4,13 @@ Selector{property: value;}
 /*To give an element a class, we use the class attribute.*/
 /*<h1 class="classname">Hello World</h1>*/
 /*Now, we can select it using .classname*/
+h1,h2,p{property: value;}
+/*we can also select multiple elements at once by separating them with a comma.*/
 .classname{property: value;}
 /*By using class , we can group different elements together and style them all at once.*/
 /*for example, if we name a class in html 'text-red', and add that class to all elements that we want to consider to be red,by adding .text-red{color: red;} to css, we can change the color of all of them at once to red.*/
+p.classname{property: value;}
+/*we can also select elements based on their element and their class.*/
 #idname{property: value;}
 /*id is similar to class, but it is used to select only one element. It is used when we want to style only one element, and not a group of elements.*/
 /*for example, if we name an id in html 'text-red', id="text-red", and add that id to an element that we want to consider to be red,by adding #text-red{color: red;} to css, we can change the color of only that element to red.*/
