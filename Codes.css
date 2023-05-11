@@ -1,0 +1,21 @@
+Selector{property: value;}
+/*Selector is the element you want to style, property is the style you want to change, and value is the value you want to set it to.*/
+/*the thing is, when we select an element like h1 or p, we are selecting all of them. So if we want to select only one of them, we need to give it a class .*/
+/*To give an element a class, we use the class attribute.*/
+/*<h1 class="classname">Hello World</h1>*/
+/*Now, we can select it using .classname*/
+.classname{property: value;}
+/*By using class , we can group different elements together and style them all at once.*/
+/*for example, if we name a class in html 'text-red', and add that class to all elements that we want to consider to be red,by adding .text-red{color: red;} to css, we can change the color of all of them at once to red.*/
+#idname{property: value;}
+/*id is similar to class, but it is used to select only one element. It is used when we want to style only one element, and not a group of elements.*/
+/*for example, if we name an id in html 'text-red', id="text-red", and add that id to an element that we want to consider to be red,by adding #text-red{color: red;} to css, we can change the color of only that element to red.*/
+[href]{property: value;}
+/*we can also select elements based on their attributes.*/
+/*for example, if we want to select all elements that have the attribute 'href', we can use [href]*/
+p[href]{property: value;}
+/*we can also select elements based on their attributes and their element.*/
+a[draggable="false"]{property: value;}
+/*we can also select elements based on their attributes and their element.*/
+*{property: value;}
+/*we can also select all elements at once using * */
