@@ -23,3 +23,6 @@ a[draggable="false"]{property: value;}
 /*we can also select elements based on their attributes and their element.*/
 *{property: value;}
 /*we can also select all elements at once using * */
+table,th,td{property: value;}
+/*To see all sections of a border, the selector for table should be like this*/
+/*we can also select multiple elements at once by separating them with a comma.*/
