@@ -31,6 +31,9 @@ p{
     background-color: aqua;
     border-color: aquamarine;
     color-scheme: auto;
+    /*color-scheme is used to change the color of the text based on the color of the background.*/
+    /***We can use this link to find the pallet of colors that we want: https://colorhunt.co/and this one as mixer:https://www.csfieldguide.org.nz/en/interactives/rgb-mixer/***/
+
 }
 p{
     font-size: 10px;
@@ -45,4 +48,42 @@ p{
     font-style: italic;
     font-weight: bold;
     /*1- normal or bold. 2- 100,200,300,400,500,600,700,800,900. 3- lighter or bolder.(-100 or +100) 4- initial or inherit.*/
+    text-align: center;
+    text-decoration: underline;
+    /*1- none, underline, overline, line-through, initial, inherit. 2- color, style, length, initial, inherit.*/
+}/**********************/
+/*we can use chrome developer tools to see the styles of  elements and every detail about a website.*/
+/*we can also use chrome developer tools to change the styles of elements and see how it looks.*/
+/*It also can be used to debug our code.*/
+/*we can also use chrome developer tools to see the html code, css and javascript of a website.*/
+/*we can also use it to see details of a website, like the size of an image or a color or font that we like. ***go to ... then more tools and css overview*** */
+table{
+    height:200px; /*can be messured in px , %, ....*/
+    width:200px;
+    border: 1px solid black;
+       border-top: 1px solid black; /*we use this to change the top border of the table, and it should be written under border.*/
+    border-collapse: collapse;
+    /*collapse is used to make the borders of the table to be one border.*/
+    /*separate is used to make the borders of the table to be separate.*/
+    /*initial is used to make the borders of the table to be separate.*/
+    /*inherit is used to make the borders of the table to be separate.*/
+    border-spacing: 10px;/* is used to make the space between the borders of the table.*/
+    border-radius: 5px;
+    border-color: aliceblue;
+    border-width: 0px 10px 20px 30px; 
+    /*is used to change the width of the borders of the table.*/
+    /*the order is top, right, bottom, left.*/
+    border-width: 10px 20px;
+   /*the order is top and bottom, right and left.*/
+   padding: 20px;
+    /*is used to change the space between the content of the table and the borders of the table.*/
+    /*the order is top, right, bottom, left.*/
+    padding: 20px 10px;
+    /*the order is top and bottom, right and left.*/
+    padding: 20px 10px 30px;
+    /*the order is top, right and left, bottom.*/
+    margin:10px;
+    /*is used to change the space between the border and the other elements.*/
+    /*the order is top, right, bottom, left.*/
 }
+
