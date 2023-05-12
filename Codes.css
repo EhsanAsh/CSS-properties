@@ -26,3 +26,23 @@ a[draggable="false"]{property: value;}
 table,th,td{property: value;}
 /*To see all sections of a border, the selector for table should be like this*/
 /*we can also select multiple elements at once by separating them with a comma.*/
+p{
+    color:aliceblue;
+    background-color: aqua;
+    border-color: aquamarine;
+    color-scheme: auto;
+}
+p{
+    font-size: 10px;
+    font-size: 10pt;
+    font-size: 1em;
+    font-size: 10%;
+    font-size: 1rem;
+    font-size:xx-large;
+    font-family: 'Courier New', Courier, monospace;
+    /* First one is the font we want to use, second one is the font we want to use if the first one is not available, and the third one is the font we want to use if the second one is not available.*/
+    /***We can use google font website to find fonts, and make a font family that we want. then we can copy the link and paste it in the head of our html file, and copy the font-family and paste it in our css file.***/
+    font-style: italic;
+    font-weight: bold;
+    /*1- normal or bold. 2- 100,200,300,400,500,600,700,800,900. 3- lighter or bolder.(-100 or +100) 4- initial or inherit.*/
+}
