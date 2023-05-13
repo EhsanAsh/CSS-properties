@@ -51,12 +51,17 @@ p{
     text-align: center;
     text-decoration: underline;
     /*1- none, underline, overline, line-through, initial, inherit. 2- color, style, length, initial, inherit.*/
+    text-transform: capitalize;
+    /*1- none, capitalize, uppercase, lowercase, initial, inherit.*/
+    /*We use this property to change the text to lowercase or uppercase or capitalize.*/
+    /*we can also use text-transform to change the text to be in a different language.*/
 }/**********************/
 /*we can use chrome developer tools to see the styles of  elements and every detail about a website.*/
 /*we can also use chrome developer tools to change the styles of elements and see how it looks.*/
 /*It also can be used to debug our code.*/
 /*we can also use chrome developer tools to see the html code, css and javascript of a website.*/
-/*we can also use it to see details of a website, like the size of an image or a color or font that we like. ***go to ... then more tools and css overview*** */
+/*we can also use it to see details of a website, like the size of an image or a color or font or even borders and margins, that we like. ***go to ... then more tools and css overview*** */
+/*by using debug extension, our webpage will be shown in box style, and we can see the details of our code. by holding ctrl and hoovering around different devisions, we can see a breif description of that part at the bottom of the page.*/
 table{
     height:200px; /*can be messured in px , %, ....*/
     width:200px;
@@ -85,5 +90,12 @@ table{
     margin:10px;
     /*is used to change the space between the border and the other elements.*/
     /*the order is top, right, bottom, left.*/
+
+    /*border, padding, margin, width, height, and all related properties, They all have one same character: all change frame. Thus, we can set all for sides for them.*/
+}
+img{
+    width:50%;
+    margin-left: 25%;
+    /*Hint: Horizontally center a div by giving it a width of 50% and a margin-left of 25%.*/
 }
 
