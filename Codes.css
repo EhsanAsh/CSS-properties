@@ -1,31 +1,95 @@
+/*Intro:*/
+
+/****Cascading means that if we have two selectors that select the same element(like below), the one that is written later will be applied.
+li{color: red; color:blue;} ****/
+
+/*There are three ways to add css to html:*/
+/*1- inline: by adding style attribute to the element. for example: <h1 style="color: red;">Hello World</h1>*/
+/*2- internal: by adding style tag to the head of the html file. for example: <style>h1{color: red;}</style>*/
+/*3- external: by adding a link tag to the head of the html file. for example: <link rel="stylesheet" href="style.css">*/
+
+/***********************************************/
+
 Selector{property: value;}
 /*Selector is the element you want to style, property is the style you want to change, and value is the value you want to set it to.*/
 /*the thing is, when we select an element like h1 or p, we are selecting all of them. So if we want to select only one of them, we need to give it a class .*/
 /*To give an element a class, we use the class attribute.*/
 /*<h1 class="classname">Hello World</h1>*/
 /*Now, we can select it using .classname*/
-h1,h2,p{property: value;}
-/*we can also select multiple elements at once by separating them with a comma.*/
+
+/***********************************************/
+
+/*There are four different categories that we look at when we want to style an element:*/
+
+/*1- color: we can change the color of the text, background, border, ...*/
+/*2- text: we can change the font, size, style, ...*/
+/*3- box model: we can change the size, border, margin, padding, ...*/
+/*4- position: we can change the position of the element, ...*/
+
+/***********************************************/
+
+/**There are four categories which we look at when we are determinig the overal level of a css rule:**/
+
+/*1-Position: like below, the outcome is the last one(green)*/ 
+/*li{color: red; color:blue;}
+li{color: green;}*/
+/*2-Specifity: It is the number of selectors that we have used to select an element. like below, the outcome is the last one(Yellow) because it's the most important and unique one*/
+li{color: red;}
+.class-first{color: blue;}
+li[draggable]{color: green;}
+#first-id{color: yellow;}
+/*3-Type: External, internal, inline. the  most important one is inline, then internal, then external.*/
+/*4-Importance: we can use "!important" to make a rule more important than others.*/
+li{color: red !important;}
+/*Always the last one is the most important and the one that will be applied*/
+/*Finally the order will be like this: 1- !importan2- Type3- Specifity4- Position*/
+/*Always Imagin the form and flow of a cascade.*/
+
+/***********************************************/
+
+/* different selectors: */
+
+element{property: value;}
+
 .classname{property: value;}
+/*In html we can add class names as many as we want to an element by using space between class names.*/
 /*By using class , we can group different elements together and style them all at once.*/
 /*for example, if we name a class in html 'text-red', and add that class to all elements that we want to consider to be red,by adding .text-red{color: red;} to css, we can change the color of all of them at once to red.*/
-p.classname{property: value;}
-/*we can also select elements based on their element and their class.*/
+
 #idname{property: value;}
 /*id is similar to class, but it is used to select only one element. It is used when we want to style only one element, and not a group of elements.*/
 /*for example, if we name an id in html 'text-red', id="text-red", and add that id to an element that we want to consider to be red,by adding #text-red{color: red;} to css, we can change the color of only that element to red.*/
-[href]{property: value;}
+
+[attribute]{property: value;}
 /*we can also select elements based on their attributes.*/
 /*for example, if we want to select all elements that have the attribute 'href', we can use [href]*/
-p[href]{property: value;}
+element[attribute]{property: value;}
 /*we can also select elements based on their attributes and their element.*/
-a[draggable="false"]{property: value;}
+element[attribute="value"]{property: value;}
 /*we can also select elements based on their attributes and their element.*/
 *{property: value;}
-/*we can also select all elements at once using * */
-table,th,td{property: value;}
-/*To see all sections of a border, the selector for table should be like this*/
+/*we can also select all elements at once using*/
+
+/**********************************************/
+
+/* different selector combinations: */
+
+selector,selector{property: value;}
 /*we can also select multiple elements at once by separating them with a comma.*/
+parent-slector>child-selector{property: value;}
+/*The child should be just one level down from the parent. for example, if we have a <div> and inside that, we have a <p>, we can select that <p> using div>p*/
+ansector-selector descendant-selector{property: value;}
+/*First selector is the ancestor and the 2nd one is descendant. As long as there is a descendant anywhere in any layer under the ansector selector, the code will be excuted*/
+selectorselector{property: value;}
+/*Chaning: by writing different selectors together without any spaces to make it more unique.
+h1#classid.claasname.classname*/
+selector selectorselector{property: value;}
+/*Combining combinares:*/
+
+/*******************************************/   
+
+/* different color properties: */
+
 p{
     color:aliceblue;
     background-color: aqua;
@@ -33,15 +97,18 @@ p{
     color-scheme: auto;
     /*color-scheme is used to change the color of the text based on the color of the background.*/
     /***We can use this link to find the pallet of colors that we want: https://colorhunt.co/and this one as mixer:https://www.csfieldguide.org.nz/en/interactives/rgb-mixer/***/
-
 }
+/*********************************************/
+
+/* different text&font properties: */
+
 p{
     font-size: 10px;
-    font-size: 10pt;
+    /*font-size: 10pt;
     font-size: 1em;
     font-size: 10%;
     font-size: 1rem;
-    font-size:xx-large;
+    font-size:xx-large;*/
     font-family: 'Courier New', Courier, monospace;
     /* First one is the font we want to use, second one is the font we want to use if the first one is not available, and the third one is the font we want to use if the second one is not available.*/
     /***We can use google font website to find fonts, and make a font family that we want. then we can copy the link and paste it in the head of our html file, and copy the font-family and paste it in our css file.***/
@@ -55,16 +122,29 @@ p{
     /*1- none, capitalize, uppercase, lowercase, initial, inherit.*/
     /*We use this property to change the text to lowercase or uppercase or capitalize.*/
     /*we can also use text-transform to change the text to be in a different language.*/
-}/**********************/
+}
+
+/*********************************************/
+
+/*********Very Important:*********/
 /*we can use chrome developer tools to see the styles of  elements and every detail about a website.*/
 /*we can also use chrome developer tools to change the styles of elements and see how it looks.*/
 /*It also can be used to debug our code.*/
 /*we can also use chrome developer tools to see the html code, css and javascript of a website.*/
 /*we can also use it to see details of a website, like the size of an image or a color or font or even borders and margins, that we like. ***go to ... then more tools and css overview*** */
 /*by using debug extension, our webpage will be shown in box style, and we can see the details of our code. by holding ctrl and hoovering around different devisions, we can see a breif description of that part at the bottom of the page.*/
+
+/*********************************************/
+
+/*table properties:*/
+
 table{
+    /*colspan only works for <td> and <th> tags and should be written in html as an inline css code for that specific box.*/
     height:200px; /*can be messured in px , %, ....*/
-    width:200px;
+    width:50%;
+    margin-left: 25%;
+    margin-top: 25%;
+
     border: 1px solid black;
        border-top: 1px solid black; /*we use this to change the top border of the table, and it should be written under border.*/
     border-collapse: collapse;
@@ -93,9 +173,18 @@ table{
 
     /*border, padding, margin, width, height, and all related properties, They all have one same character: all change frame. Thus, we can set all for sides for them.*/
 }
+th{}
+td{}
+
+/*********************************************/
+
+/*image properties:*/
+
 img{
     width:50%;
     margin-left: 25%;
     /*Hint: Horizontally center a div by giving it a width of 50% and a margin-left of 25%.*/
 }
+
+/*********************************************/
 
