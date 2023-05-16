@@ -188,3 +188,24 @@ img{
 
 /*********************************************/
 
+/*Position properties:*/
+
+position: static; /*is the default position of an element.*/
+position: relative; /*is used to change the position of an element relative to its original position by adding numbers, oriented twards the new position.*/
+position: absolute;/* is used to change the position of an element, based on the value that we set, relative to its parent element, if the parent is positioned. If not, it will be set relative to top left corner of the web page.*/
+z-index: 1;
+/*is used to change the order of elements. the higher the number, the more on top it will be.*/
+position: fixed; /*is used to change the position of an element relative to the browser window, and the element will always stay on top.*/
+/*position: sticky; is used to change the position of an element relative to its parent element until it reaches a certain point, then it will be fixed.*/
+
+/*********************************************/
+
+/*We can use this style model to make a circle:*/
+.red-cirle{
+    background-color: red;
+    width:200px
+    height:200px;
+    border-radius: 50%;
+}
+
+/*********************************************/
