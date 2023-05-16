@@ -192,7 +192,8 @@ img{
 
 position: static; /*is the default position of an element.*/
 position: relative; /*is used to change the position of an element relative to its original position by adding numbers, oriented twards the new position.*/
-position: absolute;/* is used to change the position of an element, based on the value that we set, relative to its parent element, if the parent is positioned. If not, it will be set relative to top left corner of the web page.*/
+position: absolute;/*It  is used to change the position of an element, based on the value that we set, relative to its parent element, if the parent is positioned. If not, it will be set relative to top left corner of the web page.*/
+/******In order to change the child position relative to the parent, we have to set a relative position for the parent.*****/
 z-index: 1;
 /*is used to change the order of elements. the higher the number, the more on top it will be.*/
 position: fixed; /*is used to change the position of an element relative to the browser window, and the element will always stay on top.*/
@@ -209,3 +210,5 @@ position: fixed; /*is used to change the position of an element relative to the 
 }
 
 /*********************************************/
+
+/*******If we want to copy the exact path of an element or selector, we have to go through google inspector and find the place that element or selector is located, then right click and find the 'copy selector' or 'copy element' option.********/
