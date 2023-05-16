@@ -212,3 +212,46 @@ position: fixed; /*is used to change the position of an element relative to the 
 /*********************************************/
 
 /*******If we want to copy the exact path of an element or selector, we have to go through google inspector and find the place that element or selector is located, then right click and find the 'copy selector' or 'copy element' option.********/
+
+/*********************************************/
+
+/*display properties:*//**Setting Layouts**/
+
+element{display: block;}
+/*block elements take up the full width available, and they have a line break before and after them and we can set their width and height.*/
+element{display: inline;}
+/*inline elements take up only the space that they need, and they don't have a line break before and after them and we can't set the width and height.*/
+element{display: inline-block;}
+/*inline-block elements take up only the space that they need, and they don't have a line break before and after them and we can set their width and height.*/
+element{display: none;}
+/*none elements are not visible and they don't take up any space.*/
+element{display:list-item;}
+/*list-item elements are used to make a list.*/
+element{display:table;}
+/*table elements are used to make a table.*/
+element{display:table-row;}
+/*table-row elements are used to make a table row.*/
+element{display:table-cell;}
+/*table-cell elements are used to make a table cell.*/
+element{display:table-header-group;}
+/*table-header-group elements are used to make a table header group.*/
+element{display:table-footer-group;}
+/*table-footer-group elements are used to make a table footer group.*/
+element{display:inline-table;}
+/*inline-table elements are used to make a table.*/
+element{display:table-caption;}
+/*table-caption elements are used to make a table caption.*/
+element{display:table-column;}
+/*table-column elements are used to make a table column.*/
+
+/*********************************************/
+
+/*Float properties:*//**Setting Layouts**/
+
+element{float: left;}
+/* It's used to move an element to the left or right of its container, and make other elements to wrap around it.*/
+/*It's used to make a text to wrap around an image.*/
+element{clear: both;}
+/*It's used to make an element to not wrap around a floated element like a footer.*/
+
+/*********************************************/
