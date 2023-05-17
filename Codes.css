@@ -266,3 +266,22 @@ element{clear: both;}
 
 /*********************************************/
 
+/*Media Queries:*/
+
+/*We have 3 general options for media queries: all, screen, print.*/
+
+@media(max-width: 600px;){
+    /*We can use media queries to change the style of a website based on the size of the screen.*/
+    /*we can use this link to find the size of different devices: https://www.mydevice.io/ */
+    /*This code means that if the size of the screen is less than 600px, the code inside will be excuted.*/
+}
+@media(max-width: 600px;) and (min-width: 400px;){
+   /*This code means that if the size of the screen is less than 600px and more than 400px, the code inside will be excuted.*/
+}
+
+/*Mobile Devices: 319px — 480px
+iPads and Tablets: 481px — 1200px
+Laptops: 1201px — 1600px
+Desktops: 1601px and more*/
+
+/*********************************************/
