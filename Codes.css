@@ -8,7 +8,8 @@ li{color: red; color:blue;} ****/
 /*2- internal: by adding style tag to the head of the html file. for example: <style>h1{color: red;}</style>*/
 /*3- external: by adding a link tag to the head of the html file. for example: <link rel="stylesheet" href="style.css">*/
 
-/***********************************************/
+
+/*******************Main Frame*******************/
 
 Selector{property: value;}
 /*Selector is the element you want to style, property is the style you want to change, and value is the value you want to set it to.*/
@@ -17,18 +18,79 @@ Selector{property: value;}
 /*<h1 class="classname">Hello World</h1>*/
 /*Now, we can select it using .classname*/
 
-/***********************************************/
-
-/*There are four different categories that we look at when we want to style an element:*/
+/********Four different categories to style an element********/
 
 /*1- color: we can change the color of the text, background, border, ...*/
 /*2- text: we can change the font, size, style, ...*/
 /*3- box model: we can change the size, border, margin, padding, ...*/
 /*4- position: we can change the position of the element, ...*/
 
-/***********************************************/
+/****************different Color properties****************/ 
 
-/**There are four categories which we look at when we are determinig the overal level of a css rule:**/
+p{
+    color:aliceblue;
+    background-color: aqua;
+    border-color: aquamarine;
+    color-scheme: auto;
+    /*****we can define colors by name, RGB(Red0-255, Green0-255, Blue0-255) and Hexadecimal numbers.*/
+    /****Hexadecimal system has 16 choices: 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F--A is number 10 and F 15*/
+    /*The system for colors works like this: from #000000 to #ffffff -- The two first are Red chanel, 2nd ones are Green and last two are blue chanel */
+    /* ff is 15*15 which is 255*/
+    /*color-scheme is used to change the color of the text based on the color of the background.*/
+    /***We can use this link to find the pallet of colors that we want: https://colorhunt.co/and this one as mixer:https://www.csfieldguide.org.nz/en/interactives/rgb-mixer/***/
+}
+
+/*********************different Sizes*********************/
+
+/*1PX = 1/96th inch = 0.26mm x 0.26mm(**It's not recommended for responsive websites**)
+1 PT = 1/72nd inch = 0.35 mm
+1 em = 100% of parent- It's full width of letter 'm'
+It means, if e.x. we set h1 to 1em and let's say it's a child of body, and body's font-size is 20px then h1 will be 100% like body, and if we set it to 2em the font size will be 40px.
+So first we have to set a size for body then adjust different font sizes for different elements, based on that size by using em.
+1 rem = 100% of root (html tag)
+If we want to use relative font size, it's better to use rem instead of em. Because soon everything is going to be messy due to that parenting issue*/
+
+/**************different text&font properties**************/
+
+p{
+    font-size: 10px;
+    /*font-size: 10pt;
+    font-size: 1em;
+    font-size: 10%;
+    font-size: 1rem;
+    font-size:xx-large;*/
+    font-family: 'Courier New', Courier, monospace;
+    /* First one is the font we want to use, second one is the font we want to use if the first one is not available, and the third one is the font we want to use if the second one is not available.*/
+    /***We can use google font website to find fonts, and make a font family that we want. then we can copy the link and paste it in the head of our html file, and copy the font-family and paste it in our css file.***/
+    font-style: italic;
+    font-weight: bold;
+    /*1- normal or bold. 2- 100,200,300,400,500,600,700,800,900. 3- lighter or bolder.(-100 or +100) 4- initial or inherit.*/
+    text-align: center;
+    text-decoration: underline beige wavy;
+    /*1- none, underline, overline, line-through, initial, inherit. 2- color- 3-style.*/
+    /* we can use text-decoration to change the style of a link.*/
+    /* for example we can use text-decoration: none; to remove the underline of a link by using that style for an anchor tag.*/
+    text-transform: capitalize;
+    /*1- none, capitalize, uppercase, lowercase, initial, inherit.*/
+    /*We use this property to change the text to lowercase or uppercase or capitalize.*/
+    /*we can also use text-transform to change the text to be in a different language.*/
+
+    line-height:1.5;
+    /*is used to change the space between lines. we can use it in different kind of numbering.*/
+    letter-spacing: 1px;
+    /*is used to change the space between letters.*/
+}
+
+/****************Very Important****************/
+
+/*we can use chrome developer tools to see the styles of  elements and every detail about a website.*/
+/*we can also use chrome developer tools to change the styles of elements and see how it looks.*/
+/*It also can be used to debug our code.*/
+/*we can also use chrome developer tools to see the html code, css and javascript of a website.*/
+/*we can also use it to see details of a website, like the size of an image or a color or font or even borders and margins, that we like. ***go to ... then more tools and css overview*** */
+/*by using debug extension, our webpage will be shown in box style, and we can see the details of our code. by holding ctrl and hoovering around different devisions, we can see a breif description of that part at the bottom of the page.*/
+
+/************detemining the overal level************/
 
 /*1-Position: like below, the outcome is the last one(green)*/ 
 /*li{color: red; color:blue;}
@@ -45,9 +107,7 @@ li{color: red !important;}
 /*Finally the order will be like this: 1- !importan2- Type3- Specifity4- Position*/
 /*Always Imagin the form and flow of a cascade.*/
 
-/***********************************************/
-
-/* different selectors: */
+/****************different Selectors****************/
 
 element{property: value;}
 
@@ -70,9 +130,7 @@ element[attribute="value"]{property: value;}
 *{property: value;}
 /*we can also select all elements at once using*/
 
-/**********************************************/
-
-/* different selector combinations: */
+/************Different Selector combinations************/
 
 selector,selector{property: value;}
 /*we can also select multiple elements at once by separating them with a comma.*/
@@ -86,57 +144,7 @@ h1#classid.claasname.classname*/
 selector selectorselector{property: value;}
 /*Combining combinares:*/
 
-/*******************************************/   
-
-/* different color properties: */
-
-p{
-    color:aliceblue;
-    background-color: aqua;
-    border-color: aquamarine;
-    color-scheme: auto;
-    /*color-scheme is used to change the color of the text based on the color of the background.*/
-    /***We can use this link to find the pallet of colors that we want: https://colorhunt.co/and this one as mixer:https://www.csfieldguide.org.nz/en/interactives/rgb-mixer/***/
-}
-/*********************************************/
-
-/* different text&font properties: */
-
-p{
-    font-size: 10px;
-    /*font-size: 10pt;
-    font-size: 1em;
-    font-size: 10%;
-    font-size: 1rem;
-    font-size:xx-large;*/
-    font-family: 'Courier New', Courier, monospace;
-    /* First one is the font we want to use, second one is the font we want to use if the first one is not available, and the third one is the font we want to use if the second one is not available.*/
-    /***We can use google font website to find fonts, and make a font family that we want. then we can copy the link and paste it in the head of our html file, and copy the font-family and paste it in our css file.***/
-    font-style: italic;
-    font-weight: bold;
-    /*1- normal or bold. 2- 100,200,300,400,500,600,700,800,900. 3- lighter or bolder.(-100 or +100) 4- initial or inherit.*/
-    text-align: center;
-    text-decoration: underline;
-    /*1- none, underline, overline, line-through, initial, inherit. 2- color, style, length, initial, inherit.*/
-    text-transform: capitalize;
-    /*1- none, capitalize, uppercase, lowercase, initial, inherit.*/
-    /*We use this property to change the text to lowercase or uppercase or capitalize.*/
-    /*we can also use text-transform to change the text to be in a different language.*/
-}
-
-/*********************************************/
-
-/*********Very Important:*********/
-/*we can use chrome developer tools to see the styles of  elements and every detail about a website.*/
-/*we can also use chrome developer tools to change the styles of elements and see how it looks.*/
-/*It also can be used to debug our code.*/
-/*we can also use chrome developer tools to see the html code, css and javascript of a website.*/
-/*we can also use it to see details of a website, like the size of an image or a color or font or even borders and margins, that we like. ***go to ... then more tools and css overview*** */
-/*by using debug extension, our webpage will be shown in box style, and we can see the details of our code. by holding ctrl and hoovering around different devisions, we can see a breif description of that part at the bottom of the page.*/
-
-/*********************************************/
-
-/*table properties:*/
+/****************Table Properties****************/
 
 table{
     /*colspan only works for <td> and <th> tags and should be written in html as an inline css code for that specific box.*/
@@ -176,9 +184,7 @@ table{
 th{}
 td{}
 
-/*********************************************/
-
-/*image properties:*/
+/*****************Image Properties*****************/
 
 img{
     width:50%;
@@ -186,11 +192,9 @@ img{
     /*Hint: Horizontally center a div by giving it a width of 50% and a margin-left of 25%.*/
 }
 
-/*********************************************/
+/****************Position properties****************/
 
-/*Position properties:*/
-
-position: static; /*is the default position of an element.*/
+div{position: static;} /*is the default position of an element.*/
 position: relative; /*is used to change the position of an element relative to its original position by adding numbers, oriented twards the new position.*/
 position: absolute;/*It  is used to change the position of an element, based on the value that we set, relative to its parent element, if the parent is positioned. If not, it will be set relative to top left corner of the web page.*/
 /******In order to change the child position relative to the parent, we have to set a relative position for the parent.*****/
@@ -199,9 +203,8 @@ z-index: 1;
 position: fixed; /*is used to change the position of an element relative to the browser window, and the element will always stay on top.*/
 /*position: sticky; is used to change the position of an element relative to its parent element until it reaches a certain point, then it will be fixed.*/
 
-/*********************************************/
+/*****************Make a Circle*****************/
 
-/*We can use this style model to make a circle:*/
 .red-cirle{
     background-color: red;
     width:200px
@@ -209,13 +212,11 @@ position: fixed; /*is used to change the position of an element relative to the 
     border-radius: 50%;
 }
 
-/*********************************************/
+/*********************Important********************/
 
 /*******If we want to copy the exact path of an element or selector, we have to go through google inspector and find the place that element or selector is located, then right click and find the 'copy selector' or 'copy element' option.********/
 
-/*********************************************/
-
-/*display properties:*//**Setting Layouts**/
+/**********Setting Layouts//Display Properties**********/
 
 element{display: block;}
 /*block elements take up the full width available, and they have a line break before and after them and we can set their width and height.*/
@@ -244,9 +245,7 @@ element{display:table-caption;}
 element{display:table-column;}
 /*table-column elements are used to make a table column.*/
 
-/*********************************************/
-
-/*Float properties:*//**Setting Layouts**/
+/**********Setting Layouts//Float Properties**********/
 
 element{float: left;}
 /* It's used to move an element to the left or right of its container, and make other elements to wrap around it.*/
@@ -254,9 +253,7 @@ element{float: left;}
 element{clear: both;}
 /*It's used to make an element to not wrap around a floated element like a footer.*/
 
-/*********************************************/
-
-/*responsive Website:*/
+/****************Responsive Website****************/
 
 /*We can use these four methods to make a responsive website:
 1- Media Queries
@@ -264,9 +261,7 @@ element{clear: both;}
 3- Css Flexbox
 4- External Frameworks like: Bootstrap*/
 
-/*********************************************/
-
-/*Media Queries:*/
+/*****************Media Queries*****************/
 
 /*We have 3 general options for media queries: all, screen, print.*/
 
