@@ -90,6 +90,44 @@ p{
 /*we can also use it to see details of a website, like the size of an image or a color or font or even borders and margins, that we like. ***go to ... then more tools and css overview*** */
 /*by using debug extension, our webpage will be shown in box style, and we can see the details of our code. by holding ctrl and hoovering around different devisions, we can see a breif description of that part at the bottom of the page.*/
 
+/****************different Selectors****************/
+
+element{property: value;}
+
+*{property: value;}
+/*we can also select all elements at once using*/
+
+.classname{property:value;}
+/*In html we can add class names as many as we want to an element by using space between class names.*/
+/*By using class , we can group different elements together and style them all at once.*/
+/*for example, if we name a class in html 'text-red', and add that class to all elements that we want to consider to be red,by adding .text-red{color: red;} to css, we can change the color of all of them at once to red.*/
+
+#idname{property: value;}
+/*id is similar to class, but it is used to select only one element. It is used when we want to style only one element, and not a group of elements.*/
+/*for example, if we name an id in html 'text-red', id="text-red", and add that id to an element that we want to consider to be red,by adding #text-red{color: red;} to css, we can change the color of only that element to red.*/
+
+[attribute]{property: value;}
+/*we can also select elements based on their attributes.*/
+/*for example, if we want to select all elements that have the attribute 'href', we can use [href]*/
+element[attribute]{property: value;}
+/*we can also select elements based on their attributes and their element.*/
+element[attribute="value"]{property: value;}
+/*we can also select elements based on their attributes and their element.*/
+
+/************Different Selector combinations************/
+
+selector,selector{property: value;}
+/*we can also select multiple elements at once by separating them with a comma.*/
+parent-slector>child-selector{property: value;}
+/*The child should be just one level down from the parent. for example, if we have a <div> and inside that, we have a <p>, we can select that <p> using div>p*/
+ansector-selector descendant-selector{property: value;}
+/*First selector is the ancestor and the 2nd one is descendant. As long as there is a descendant anywhere in any layer under the ansector selector, the code will be excuted*/
+selectorselector{property: value;}
+/*Chaning: by writing different selectors together without any spaces to make it more unique.
+h1#classid.claasname.classname*/
+selector selectorselector{property: value;}
+/*Combining combinares:*/
+
 /************detemining the overal level************/
 
 /*1-Position: like below, the outcome is the last one(green)*/ 
@@ -106,43 +144,6 @@ li{color: red !important;}
 /*Always the last one is the most important and the one that will be applied*/
 /*Finally the order will be like this: 1- !importan2- Type3- Specifity4- Position*/
 /*Always Imagin the form and flow of a cascade.*/
-
-/****************different Selectors****************/
-
-element{property: value;}
-
-.classname{property: value;}
-/*In html we can add class names as many as we want to an element by using space between class names.*/
-/*By using class , we can group different elements together and style them all at once.*/
-/*for example, if we name a class in html 'text-red', and add that class to all elements that we want to consider to be red,by adding .text-red{color: red;} to css, we can change the color of all of them at once to red.*/
-
-#idname{property: value;}
-/*id is similar to class, but it is used to select only one element. It is used when we want to style only one element, and not a group of elements.*/
-/*for example, if we name an id in html 'text-red', id="text-red", and add that id to an element that we want to consider to be red,by adding #text-red{color: red;} to css, we can change the color of only that element to red.*/
-
-[attribute]{property: value;}
-/*we can also select elements based on their attributes.*/
-/*for example, if we want to select all elements that have the attribute 'href', we can use [href]*/
-element[attribute]{property: value;}
-/*we can also select elements based on their attributes and their element.*/
-element[attribute="value"]{property: value;}
-/*we can also select elements based on their attributes and their element.*/
-*{property: value;}
-/*we can also select all elements at once using*/
-
-/************Different Selector combinations************/
-
-selector,selector{property: value;}
-/*we can also select multiple elements at once by separating them with a comma.*/
-parent-slector>child-selector{property: value;}
-/*The child should be just one level down from the parent. for example, if we have a <div> and inside that, we have a <p>, we can select that <p> using div>p*/
-ansector-selector descendant-selector{property: value;}
-/*First selector is the ancestor and the 2nd one is descendant. As long as there is a descendant anywhere in any layer under the ansector selector, the code will be excuted*/
-selectorselector{property: value;}
-/*Chaning: by writing different selectors together without any spaces to make it more unique.
-h1#classid.claasname.classname*/
-selector selectorselector{property: value;}
-/*Combining combinares:*/
 
 /****************Table Properties****************/
 
