@@ -128,6 +128,32 @@ h1#classid.claasname.classname*/
 selector selectorselector{property: value;}
 /*Combining combinares:*/
 
+/******************Pseudo Classes******************/
+
+/*Pseudo classes: Keyword added to a selector that specifies a special state of the selected element.*/
+a:hover{color: red;} /*for example, if we want to select all links that are hovered*/
+/* Hover means that the mouse is over the element. for example: when we hover over a button and the color changes.*/
+/* We can use Hover for all elements, not just links.*/
+/* we can give a link none decoration, then with hover we can add underline decoration. thus, when we hover over the link, it will be underlined.*/
+a:active{color: red;} /*for example, if we want to select all links that are active or buttons*/
+/* Active means that the mouse is clicked on the element. for example: when we click on a button and the color changes.*/
+button:checked{color: red;} /*for example, if we want to select all buttons that are checked*/
+/* Checked means that the element is checked. for example: when we check a checkbox and the color changes.*/
+.post:nth-last-of-type(2/*or 2n*/){color: red;} /*for example, if we want to select all posts that are the 2nd last post*/
+/* nth-last-of-type is used to select the nth element from the end of the parent element.*/
+/* we can use nth-last-of-type to select the last element, the 2nd last element, the 3rd last element, ...*/
+/* we can use 2 or 2n and the difference is that 2n will select all even elements and 2 will select only the 2nd element.*/
+.post:nth-child(3rd){color: red;} /*for example, if we want to select all posts that are the 3rd post*/
+/* nth-child is used to select the nth element from the beginning of the parent element.*/
+/* we can use nth-child to select the first element, the 2nd element, the 3rd element, ...*/
+
+/****we can use odd and even to select all odd or even elements.****/
+
+p:not(.classname){color: red;} /*for example, if we want to select all p elements that don't have a class name*/
+/* not is used to select all elements that don't have a class name.*/
+/* we can use not to select all elements that don't have a class name, or don't have an id, or don't have an attribute, ...*/
+
+
 /************detemining the overal level************/
 
 /*1-Position: like below, the outcome is the last one(green)*/ 
