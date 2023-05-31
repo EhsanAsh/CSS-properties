@@ -2,9 +2,10 @@
 
 /****Cascading means that if we have two selectors that select the same element(like below), the one that is written later will be applied.
 li{color: red; color:blue;} ****/
+/****Also if we have to styling files that have two different links in our html file, the one that is written later(the 2nd link) will be applied.****/
 
 /*There are three ways to add css to html:*/
-/*1- inline: by adding style attribute to the element. for example: <h1 style="color: red;">Hello World</h1>*/
+/*1- inline: by adding style attribute to the element. for example: <h1 style="color: red;">Hello World</h1>*//****Not Recommended****/
 /*2- internal: by adding style tag to the head of the html file. for example: <style>h1{color: red;}</style>*/
 /*3- external: by adding a link tag to the head of the html file. for example: <link rel="stylesheet" href="style.css">*/
 
@@ -153,23 +154,55 @@ p:not(.classname){color: red;} /*for example, if we want to select all p element
 /* not is used to select all elements that don't have a class name.*/
 /* we can use not to select all elements that don't have a class name, or don't have an id, or don't have an attribute, ...*/
 
+/******************Pseudo Elements******************/
 
-/************detemining the overal level************/
+h2::first-letter{font-size: 40px;}
+/*first-letter is used to select the first letter of an element(s).*/
+p::first-line{color:cyan}
+/*first-line is used to select the first line of an element(s).*/
+::selection{background-color: red;}
+/*selection is used to select the text that we select.*/
+/*we can use selection to change the color of the text that we select.*/
 
-/*1-Position: like below, the outcome is the last one(green)*/ 
-/*li{color: red; color:blue;}
-li{color: green;}*/
-/*2-Specifity: It is the number of selectors that we have used to select an element. like below, the outcome is the last one(Yellow) because it's the most important and unique one*/
-li{color: red;}
-.class-first{color: blue;}
-li[draggable]{color: green;}
-#first-id{color: yellow;}
-/*3-Type: External, internal, inline. the  most important one is inline, then internal, then external.*/
-/*4-Importance: we can use "!important" to make a rule more important than others.*/
-li{color: red !important;}
-/*Always the last one is the most important and the one that will be applied*/
-/*Finally the order will be like this: 1- !importan2- Type3- Specifity4- Position*/
+/************determining the overal level************/
+
+/**The order is from the most importance to the least impotance**/
 /*Always Imagin the form and flow of a cascade.*/
+
+/*1-Importance: we can use "!important" to make a rule more important than others.*/
+li{color: red !important;}/****Not Recommended****/
+
+/*2-Type: External, internal, inline. the  most important one is inline, then internal, then external.*/
+
+/*3-Specifity: It is the number of selectors that we have used to select an element. like below, the outcome is the (Yellow) one because it's the most important and unique one*/
+/*1(The most Important)*/#first-id{color: yellow;}
+/*2*/li[draggable]{color: green;}
+/*3*/button:hover{color: green;}
+/*4*/.class-first{color: blue;}
+/*5*/p::first-letter{color: red;}
+/*6*/li{color: red;}
+
+/*4-Position: like below, the outcome is the last one(green)*/ 
+li{color: red; color:blue;}
+li{color: green;}
+
+/*****************Calculation Model*****************/
+/*Id Selectors*/
+/*Attribute, Classe & Pseudo Class selectors*/
+/*Pseudo elements & elements*/
+#name{color: red;}/*we get 1 for id selector and two 0 for the others. So the score is 100*/
+section p{color: red;}/*we get 0 for id selector, 0 for the 2nd one and 2 for the third one. so the score is 002*/
+/***********************************************/
+
+/*********************Inheritance**********************/
+
+/* Inheritance means that if we set a style for an element, all its children will inherit that style.*/
+/* for example, if we set a color for body, all elements inside body will inherit that color.*/
+/* Then if we set a color for all divs inside body, all divs inside body will inherit that color.*/
+/*for input elements we can use inherit to inherit the style of the parent element.*/
+/*some properties like border, margin, padding, ... can't be inherited.*/
+section{color: red;}
+section input{color: inherit;}/*we can use inherit to inherit the style of the parent element.*/
 
 /****************Table Properties****************/
 
