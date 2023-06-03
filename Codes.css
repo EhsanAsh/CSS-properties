@@ -9,6 +9,9 @@ li{color: red; color:blue;} ****/
 /*2- internal: by adding style tag to the head of the html file. for example: <style>h1{color: red;}</style>*/
 /*3- external: by adding a link tag to the head of the html file. for example: <link rel="stylesheet" href="style.css">*/
 
+/*******************Caution*******************/
+
+/*colspan only works for <td> and <th> tags and should be written in html as an inline css code for that specific box.*/
 
 /*******************Main Frame*******************/
 
@@ -91,62 +94,9 @@ p{
 /*we can also use it to see details of a website, like the size of an image or a color or font or even borders and margins, that we like. ***go to ... then more tools and css overview*** */
 /*by using debug extension, our webpage will be shown in box style, and we can see the details of our code. by holding ctrl and hoovering around different devisions, we can see a breif description of that part at the bottom of the page.*/
 
-/*****************Make a Circle*****************/
+/*********************Important********************/
 
-.red-cirle{
-    background-color: red;
-    width:200px
-    height:200px;
-    border-radius: 50%;
-}
-
-/****************Table Properties****************/
-
-table{
-    /*colspan only works for <td> and <th> tags and should be written in html as an inline css code for that specific box.*/
-    height:200px; /*can be messured in px , %, ....*/
-    width:50%;
-    margin-left: 25%;
-    margin-top: 25%;
-
-    border: 1px solid black;
-       border-top: 1px solid black; /*we use this to change the top border of the table, and it should be written under border.*/
-    border-collapse: collapse;
-    /*collapse is used to make the borders of the table to be one border.*/
-    /*separate is used to make the borders of the table to be separate.*/
-    /*initial is used to make the borders of the table to be separate.*/
-    /*inherit is used to make the borders of the table to be separate.*/
-    border-spacing: 10px;/* is used to make the space between the borders of the table.*/
-    border-radius: 5px;
-    border-color: aliceblue;
-    border-width: 0px 10px 20px 30px; 
-    /*is used to change the width of the borders of the table.*/
-    /*the order is top, right, bottom, left.*/
-    border-width: 10px 20px;
-   /*the order is top and bottom, right and left.*/
-   padding: 20px;
-    /*is used to change the space between the content of the table and the borders of the table.*/
-    /*the order is top, right, bottom, left.*/
-    padding: 20px 10px;
-    /*the order is top and bottom, right and left.*/
-    padding: 20px 10px 30px;
-    /*the order is top, right and left, bottom.*/
-    margin:10px;
-    /*is used to change the space between the border and the other elements.*/
-    /*the order is top, right, bottom, left.*/
-
-    /*border, padding, margin, width, height, and all related properties, They all have one same character: all change frame. Thus, we can set all for sides for them.*/
-}
-th{}
-td{}
-
-/*****************Image Properties*****************/
-
-img{
-    width:50%;
-    margin-left: 25%;
-    /*Hint: Horizontally center a div by giving it a width of 50% and a margin-left of 25%.*/
-}
+/*******If we want to copy the exact path of an element or selector, we have to go through google inspector and find the place that element or selector is located, then right click and find the 'copy selector' or 'copy element' option.********/
 
 /****************different Selectors****************/
 
@@ -261,7 +211,71 @@ section p{color: red;}/*we get 0 for id selector, 0 for the 2nd one and 2 for th
 section{color: red;}
 section input{color: inherit;}/*we can use inherit to inherit the style of the parent element.*/
 
+/*********************Box Model**********************/
 
+/* Every element in html is a box.*/
+/* Box model is used to change the size of the content area, the padding, the border, the margin.*/
+/* Box model has 4 parts: content, padding, border, margin.*/
+/*for all 4 box model parts, we can use px, %, em, rem, ...*/
+/*for all 4 box model parts, we can use top, right, bottom, left to change the size of each part.*/
+/*for all 4 box model parts, we can set all four sides values inside one property.*/
+/*the total width of an element is the width of the content area + padding + border + margin.*/
+
+h1{
+    width: 100px;
+    height: 100px;
+}
+/* width and height are used to change the size of the content area.*/
+
+div{
+    width: 0px 10px 20px 30px; /*the order is top, right, bottom, left.*/
+    height: 10px 20px;/*the order is top and bottom, right and left.*/
+    padding: 20px;/*the order is top, right, bottom, left.*/
+    border: 20px 10px 30px;/*the order is top, right and left, bottom.*/
+}
+
+
+
+table{
+    border-width: 10px; /*Border width is used to change the size of the border.*/
+    border-color: red; /*Border color is used to change the color of the border.*/
+    border-style: solid; /*Border style is used to change the style of the border. we can use solid, dotted, dashed, double, groove, ridge, inset, outset, none, hidden.*/
+    border-radius: 5px; /*Border radius is used to change the roundness of the border. we can use px, %, em, rem, ...*/
+    /* We can use border radius to make many different shapes like circle, oval, ...*/
+
+    border-color: aliceblue rebeccapurple; /*we can use multiple border colors. the order is top, right, bottom, left.*/ 
+    border-style: solid dotted dashed double; /*we can use multiple border styles. the order is top, right, bottom, left.*/
+    border: 10px solid red; /*we can use border to change the size, color and style of the border simultaneously.*/
+    border-left-color: aliceblue;
+    /* For each of boder-width, border-color and border-style, we can use top, right, bottom, left to change the size, color and style of each side of the border.*/
+    /* Or like above we can use just border-color, and then specifiy a color for each side of the border.*/
+
+    box-sizing: border-box; /*is used to change the size of the box model. by default, the size of the box model is the size of the content area. but by using border-box, the size of the box model will be the size of the content area + padding + border.*/
+    /*It means that if we set the width of the content area to 100px, and the padding to 10px, and the border to 10px, the padding and border sizes will be some how subtracted from the content area size, so the total size of the box model will be 100px.*/
+}
+p{
+    border: 10px solid red;
+    border-left-style: dotted;
+    /* We can write a shorthand  for border, and then change the style of each side of the border that we want.*/
+}
+
+/*****************Make a Circle*****************/
+
+.red-cirle{
+    background-color: red;
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+}
+/* we can make a border, then change the border radius to 50% to make a circle around an image.*/
+
+/*****************Image Properties*****************/
+
+img{
+    width:50%;
+    margin-left: 25%;
+    /*Hint: Horizontally center a div by giving it a width of 50% and a margin-left of 25%.*/
+}
 
 /****************Position properties****************/
 
@@ -273,12 +287,6 @@ z-index: 1;
 /*is used to change the order of elements. the higher the number, the more on top it will be.*/
 position: fixed; /*is used to change the position of an element relative to the browser window, and the element will always stay on top.*/
 /*position: sticky; is used to change the position of an element relative to its parent element until it reaches a certain point, then it will be fixed.*/
-
-
-
-/*********************Important********************/
-
-/*******If we want to copy the exact path of an element or selector, we have to go through google inspector and find the place that element or selector is located, then right click and find the 'copy selector' or 'copy element' option.********/
 
 /**********Setting Layouts//Display Properties**********/
 
