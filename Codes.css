@@ -91,6 +91,63 @@ p{
 /*we can also use it to see details of a website, like the size of an image or a color or font or even borders and margins, that we like. ***go to ... then more tools and css overview*** */
 /*by using debug extension, our webpage will be shown in box style, and we can see the details of our code. by holding ctrl and hoovering around different devisions, we can see a breif description of that part at the bottom of the page.*/
 
+/*****************Make a Circle*****************/
+
+.red-cirle{
+    background-color: red;
+    width:200px
+    height:200px;
+    border-radius: 50%;
+}
+
+/****************Table Properties****************/
+
+table{
+    /*colspan only works for <td> and <th> tags and should be written in html as an inline css code for that specific box.*/
+    height:200px; /*can be messured in px , %, ....*/
+    width:50%;
+    margin-left: 25%;
+    margin-top: 25%;
+
+    border: 1px solid black;
+       border-top: 1px solid black; /*we use this to change the top border of the table, and it should be written under border.*/
+    border-collapse: collapse;
+    /*collapse is used to make the borders of the table to be one border.*/
+    /*separate is used to make the borders of the table to be separate.*/
+    /*initial is used to make the borders of the table to be separate.*/
+    /*inherit is used to make the borders of the table to be separate.*/
+    border-spacing: 10px;/* is used to make the space between the borders of the table.*/
+    border-radius: 5px;
+    border-color: aliceblue;
+    border-width: 0px 10px 20px 30px; 
+    /*is used to change the width of the borders of the table.*/
+    /*the order is top, right, bottom, left.*/
+    border-width: 10px 20px;
+   /*the order is top and bottom, right and left.*/
+   padding: 20px;
+    /*is used to change the space between the content of the table and the borders of the table.*/
+    /*the order is top, right, bottom, left.*/
+    padding: 20px 10px;
+    /*the order is top and bottom, right and left.*/
+    padding: 20px 10px 30px;
+    /*the order is top, right and left, bottom.*/
+    margin:10px;
+    /*is used to change the space between the border and the other elements.*/
+    /*the order is top, right, bottom, left.*/
+
+    /*border, padding, margin, width, height, and all related properties, They all have one same character: all change frame. Thus, we can set all for sides for them.*/
+}
+th{}
+td{}
+
+/*****************Image Properties*****************/
+
+img{
+    width:50%;
+    margin-left: 25%;
+    /*Hint: Horizontally center a div by giving it a width of 50% and a margin-left of 25%.*/
+}
+
 /****************different Selectors****************/
 
 element{property: value;}
@@ -204,53 +261,7 @@ section p{color: red;}/*we get 0 for id selector, 0 for the 2nd one and 2 for th
 section{color: red;}
 section input{color: inherit;}/*we can use inherit to inherit the style of the parent element.*/
 
-/****************Table Properties****************/
 
-table{
-    /*colspan only works for <td> and <th> tags and should be written in html as an inline css code for that specific box.*/
-    height:200px; /*can be messured in px , %, ....*/
-    width:50%;
-    margin-left: 25%;
-    margin-top: 25%;
-
-    border: 1px solid black;
-       border-top: 1px solid black; /*we use this to change the top border of the table, and it should be written under border.*/
-    border-collapse: collapse;
-    /*collapse is used to make the borders of the table to be one border.*/
-    /*separate is used to make the borders of the table to be separate.*/
-    /*initial is used to make the borders of the table to be separate.*/
-    /*inherit is used to make the borders of the table to be separate.*/
-    border-spacing: 10px;/* is used to make the space between the borders of the table.*/
-    border-radius: 5px;
-    border-color: aliceblue;
-    border-width: 0px 10px 20px 30px; 
-    /*is used to change the width of the borders of the table.*/
-    /*the order is top, right, bottom, left.*/
-    border-width: 10px 20px;
-   /*the order is top and bottom, right and left.*/
-   padding: 20px;
-    /*is used to change the space between the content of the table and the borders of the table.*/
-    /*the order is top, right, bottom, left.*/
-    padding: 20px 10px;
-    /*the order is top and bottom, right and left.*/
-    padding: 20px 10px 30px;
-    /*the order is top, right and left, bottom.*/
-    margin:10px;
-    /*is used to change the space between the border and the other elements.*/
-    /*the order is top, right, bottom, left.*/
-
-    /*border, padding, margin, width, height, and all related properties, They all have one same character: all change frame. Thus, we can set all for sides for them.*/
-}
-th{}
-td{}
-
-/*****************Image Properties*****************/
-
-img{
-    width:50%;
-    margin-left: 25%;
-    /*Hint: Horizontally center a div by giving it a width of 50% and a margin-left of 25%.*/
-}
 
 /****************Position properties****************/
 
@@ -263,14 +274,7 @@ z-index: 1;
 position: fixed; /*is used to change the position of an element relative to the browser window, and the element will always stay on top.*/
 /*position: sticky; is used to change the position of an element relative to its parent element until it reaches a certain point, then it will be fixed.*/
 
-/*****************Make a Circle*****************/
 
-.red-cirle{
-    background-color: red;
-    width:200px
-    height:200px;
-    border-radius: 50%;
-}
 
 /*********************Important********************/
 
