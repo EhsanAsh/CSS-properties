@@ -316,6 +316,15 @@ body{
     margin: 0px;
 }
 
+/**********Hint-emojies**********/
+
+/*We can use emojies in our web page by using their unicode. for example:*/
+/*U+1F600 is the unicode for the emoji 😁*/
+/*To use it we have to use content property for the element that we want and set it to the unicode of the emoji like below:*/
+h1::after{content: "\1F600";}
+/*we have to use pseudo elements to use emojies.*/
+/* we can use the webfx website to find the unicode of the emoji that we want.*/
+
 /**********Setting Layouts//Display Properties**********/
 
 /*By using display properties, we can change the way elements are displayed and change the default.*/
