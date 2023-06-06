@@ -211,7 +211,7 @@ section p{color: red;}/*we get 0 for id selector, 0 for the 2nd one and 2 for th
 section{color: red;}
 section input{color: inherit;}/*we can use inherit to inherit the style of the parent element.*/
 
-/*********************Box Model**********************/
+/******************************Box Model*******************************/
 
 /* Every element in html is a box.*/
 /* Box model is used to change the size of the content area, the padding, the border, the margin.*/
@@ -221,6 +221,8 @@ section input{color: inherit;}/*we can use inherit to inherit the style of the p
 /*for all 4 box model parts, we can set all four sides values inside one property.*/
 /*the total width of an element is the width of the content area + padding + border + margin.*/
 
+/*****Box Model:Width&Height for content area******/
+
 h1{
     width: 100px;
     height: 100px;
@@ -228,13 +230,13 @@ h1{
 /* width and height are used to change the size of the content area.*/
 
 div{
-    width: 0px 10px 20px 30px; /*the order is top, right, bottom, left.*/
+    height: 20px;/*the order is all together.*/
     height: 10px 20px;/*the order is top and bottom, right and left.*/
-    padding: 20px;/*the order is top, right, bottom, left.*/
-    border: 20px 10px 30px;/*the order is top, right and left, bottom.*/
+    height: 20px 10px 30px;/*the order is top, right and left, bottom.*/
+    height: 0px 10px 20px 30px; /*the order is top, right, bottom, left.*/
 }
 
-
+/******Box Model:Border********/
 
 table{
     border-width: 10px; /*Border width is used to change the size of the border.*/
@@ -249,7 +251,7 @@ table{
     border-left-color: aliceblue;
     /* For each of boder-width, border-color and border-style, we can use top, right, bottom, left to change the size, color and style of each side of the border.*/
     /* Or like above we can use just border-color, and then specifiy a color for each side of the border.*/
-
+    
     box-sizing: border-box; /*is used to change the size of the box model. by default, the size of the box model is the size of the content area. but by using border-box, the size of the box model will be the size of the content area + padding + border.*/
     /*It means that if we set the width of the content area to 100px, and the padding to 10px, and the border to 10px, the padding and border sizes will be some how subtracted from the content area size, so the total size of the box model will be 100px.*/
 }
@@ -259,7 +261,7 @@ p{
     /* We can write a shorthand  for border, and then change the style of each side of the border that we want.*/
 }
 
-/*****************Make a Circle*****************/
+/*********Make a Circle*********/
 
 .red-cirle{
     background-color: red;
@@ -269,13 +271,80 @@ p{
 }
 /* we can make a border, then change the border radius to 50% to make a circle around an image.*/
 
-/*****************Image Properties*****************/
+/*********Image*********/
 
 img{
     width:50%;
     margin-left: 25%;
     /*Hint: Horizontally center a div by giving it a width of 50% and a margin-left of 25%.*/
 }
+
+/******Box Model:Padding********/
+
+/*Padding area is the area between the content area and the border.*/
+button{
+    padding: 10px;/*the order is all together.*/
+    padding: 10px 20px;/*the order is top and bottom, right and left.*/
+    padding: 10px 20px 30px;/*the order is top, right and left, bottom.*/
+    padding: 10px 20px 30px 40px; /*the order is top, right, bottom, left.*/
+    /* We can use px, %, em, rem, ...*/
+    /* We can also use: */
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+/******Box Model:Margin********/
+
+/*Margin area is the area outside the border between the border and the next element.*/
+/*Margin is used to push away elements from each other.*/
+button{
+    margin: 10px;/*the order is all together.*/
+    margin: 10px 20px;/*the order is top and bottom, right and left.*/
+    margin: 10px 20px 30px;/*the order is top, right and left, bottom.*/
+    margin: 10px 20px 30px 40px; /*the order is top, right, bottom, left.*/
+    /* We can use px, %, em, rem, ...*/
+    /* We can also use: */
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+/*******Margin-Important********/
+
+/*When we run our web page in a browser, the browser adds a default margin to the body.*/
+/*So if we want to remove that margin, we have to set the margin of the body to 0px.*/
+body{
+    margin: 0px;
+}
+
+/**********Setting Layouts//Display Properties**********/
+
+/*By using display properties, we can change the way elements are displayed and change the default.*/
+element{display: block;}
+/*1-block elements take up the full width and whole block space available.
+2-we can set their width, height, padding and margin.
+3-some elements that are block by default: div, p, h1, h2, h3, h4, h5, h6, ul, ol, li, table, form, ...*/
+
+element{display: inline;}
+/*1-inline elements take up only the space that they need, they fit alongside other elements.
+2-we can't set the width and height.
+3-Margin&Padding push away elements horizontally but not vertically.
+4-some elements that are inline by default: span, a, img, input, button, ...*/
+
+element{display: inline-block;}
+/*1-inline-block elements take up only the space that they need.
+2-we can set their width, height, padding and margin.
+3-they behaive like an inline element.*/
+
+element{display: none;}
+/*none elements are not visible and they don't take up any space.*/
+
+/**********Setting Layouts//Float Properties**********/
+
+element{float: left;}
+/* It's used to move an element to the left or right of its container, and make other elements to wrap around it.*/
+/*It's used to make a text to wrap around an image.*/
+element{clear: both;}
+/*It's used to make an element to not wrap around a floated element like a footer.*/
 
 /****************Position properties****************/
 
@@ -287,43 +356,6 @@ z-index: 1;
 /*is used to change the order of elements. the higher the number, the more on top it will be.*/
 position: fixed; /*is used to change the position of an element relative to the browser window, and the element will always stay on top.*/
 /*position: sticky; is used to change the position of an element relative to its parent element until it reaches a certain point, then it will be fixed.*/
-
-/**********Setting Layouts//Display Properties**********/
-
-element{display: block;}
-/*block elements take up the full width available, and they have a line break before and after them and we can set their width and height.*/
-element{display: inline;}
-/*inline elements take up only the space that they need, and they don't have a line break before and after them and we can't set the width and height.*/
-element{display: inline-block;}
-/*inline-block elements take up only the space that they need, and they don't have a line break before and after them and we can set their width and height.*/
-element{display: none;}
-/*none elements are not visible and they don't take up any space.*/
-element{display:list-item;}
-/*list-item elements are used to make a list.*/
-element{display:table;}
-/*table elements are used to make a table.*/
-element{display:table-row;}
-/*table-row elements are used to make a table row.*/
-element{display:table-cell;}
-/*table-cell elements are used to make a table cell.*/
-element{display:table-header-group;}
-/*table-header-group elements are used to make a table header group.*/
-element{display:table-footer-group;}
-/*table-footer-group elements are used to make a table footer group.*/
-element{display:inline-table;}
-/*inline-table elements are used to make a table.*/
-element{display:table-caption;}
-/*table-caption elements are used to make a table caption.*/
-element{display:table-column;}
-/*table-column elements are used to make a table column.*/
-
-/**********Setting Layouts//Float Properties**********/
-
-element{float: left;}
-/* It's used to move an element to the left or right of its container, and make other elements to wrap around it.*/
-/*It's used to make a text to wrap around an image.*/
-element{clear: both;}
-/*It's used to make an element to not wrap around a floated element like a footer.*/
 
 /****************Responsive Website****************/
 
