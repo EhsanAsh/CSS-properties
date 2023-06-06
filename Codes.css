@@ -351,6 +351,64 @@ element{display: inline-block;}
 element{display: none;}
 /*none elements are not visible and they don't take up any space.*/
 
+/*****************************CSS Units*****************************/
+
+/*We can use different units to set the size of elements.*/
+/*Absolute units: px, pt, cm, mm, in*/
+/*Relative units: %, em, rem, vw, vh, vmin, vmax*/
+/*We can use relative units to make our website responsive.*/
+
+/*The most important an common one in absolute units is px.*/
+
+/*******PX and %*******/
+
+section{
+    width: 100px;
+    height: 100px;
+}
+div{
+    width: 50%;
+    height: 50%;
+}
+/* % is used to set the size of an element relative to its parent element.*/
+/* In the above example, the width and height of the div will be 50% of the width and height of the section which is the div's parent.*/
+h1{
+    font-size: 40px;
+    line-height: 50%;
+}
+/* In some situations like above, for properties like line-height, the 50% will be relative to the font-size of the element not the parent element.*/
+
+/**********ems**********/
+
+h2{
+    font-size: 1.5em;
+}
+/* em is used to set the size of an element relative to its parent element.*/
+/* In the above example, the font-size of the h2 will be 1.5em of the font-size of the parent element which is the secton.*/
+
+button{
+    font-size: 1em;
+    padding: 0 1em;
+    margin: 0.5em;
+    border-radius: 0.5em;
+}
+/* for any other properties like padding, margin, border-radius, ... the em will be relative to the font-size of the element itself.*/
+/* By doing this, we can make our website responsive and change everything relative to the font-size of the element itself, which is also relative to the font-size of the parent element.*/
+
+/*** One big issue with em is that it's relative to the font-size of the parent element. So if we have a div inside a div, and another div inside that one, and we set the font-size of the parent div to 20px, and the font-size of the child div(the 2nd one) to 2em, the font-size of the decendent div will be 80px and it will go on because they are all relatives.***/
+
+/**********rems**********/
+
+h2{
+    font-size: 1.5rem;
+    padding: 0.5em;
+}
+/*rem is used to set the size of an element relative to the root element which is the html element.*/
+/*In the above example, the font-size of the h2 will be 1.5rem of the font-size of the root element which is the html element.*/
+/*rem is the best unit to use for responsive websites.*/
+/*by setting the font size to 1.5rem it will change by changing the font-size of the root element, and padding will change by changing the font-size of the element itself.*/
+/* by using rem we can make our website responsive and change everything relative to the font-size of the root element which is the html element and we solve the problem of em.*/
+
 /**********Setting Layouts//Float Properties**********/
 
 element{float: left;}
