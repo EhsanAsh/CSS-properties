@@ -167,6 +167,10 @@ h2::first-letter{font-size: 40px;}
 /*first-letter is used to select the first letter of an element(s).*/
 p::first-line{color:cyan}
 /*first-line is used to select the first line of an element(s).*/
+h2::before{content: "Hello";}
+/*before is used to add content before an element(s).*/
+h2::after{content: "Hello";}
+/*after is used to add content after an element(s).*/
 ::selection{background-color: red;}
 /*selection is used to select the text that we select.*/
 /*we can use selection to change the color of the text that we select.*/
