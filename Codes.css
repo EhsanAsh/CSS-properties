@@ -268,7 +268,7 @@ p{
 /*********Make a Circle*********/
 
 .red-cirle{
-    background-color: red;
+    background-color: #ff0000;
     width:200px;
     height:200px;
     border-radius: 50%;
@@ -351,6 +351,14 @@ element{display: inline-block;}
 element{display: none;}
 /*none elements are not visible and they don't take up any space.*/
 
+/**********Setting Layouts//Float Properties**********/
+
+element{float: left;}
+/* It's used to move an element to the left or right of its container, and make other elements to wrap around it.*/
+/*It's used to make a text to wrap around an image.*/
+element{clear: both;}
+/*It's used to make an element to not wrap around a floated element like a footer.*/
+
 /*****************************CSS Units*****************************/
 
 /*We can use different units to set the size of elements.*/
@@ -409,26 +417,128 @@ h2{
 /*by setting the font size to 1.5rem it will change by changing the font-size of the root element, and padding will change by changing the font-size of the element itself.*/
 /* by using rem we can make our website responsive and change everything relative to the font-size of the root element which is the html element and we solve the problem of em.*/
 
-/**********Setting Layouts//Float Properties**********/
+/*******************************The Alpha channel & Opacity*******************************/
 
-element{float: left;}
-/* It's used to move an element to the left or right of its container, and make other elements to wrap around it.*/
-/*It's used to make a text to wrap around an image.*/
-element{clear: both;}
-/*It's used to make an element to not wrap around a floated element like a footer.*/
+/*The Alpha channel is used to change the transparency of an element.*/
+/* We only can use it for background-color, border-color, color, and the value is between 0 and 1.*/
+/* 0 means that the element is completely transparent and 1 means that the element is completely opaque.*/
+/* We can use it to make a background image transparent.*/
+section{
+    background-color: rgba(0,0,0,0.5);
+}
+/* To change it to hexadecimal, we have to use # instead of rgba and then we have to use 8 digits ---> #00000000 to #ffffffff*/
+/* The last two digits are for the alpha channel and 00 means that the element is completely transparent and ff means that the element is completely opaque.*/
 
-/****************Position properties****************/
+div{
+    opacity: 0.5;
+}
+/* opacity is used to change the transparency of an element.*/
+/*The difference between opacity and the Alpha channel is that we can use opacity for all elements, it means that if we have different elements inside a div, we can use opacity to change the transparency of all of them.*/
+/* We can use it for all elements and the value is between 0 and 1.*/
+/* 0 means that the element is completely transparent and 1 means that the element is completely opaque.*/
 
-div{position: static;} /*is the default position of an element.*/
-position: relative; /*is used to change the position of an element relative to its original position by adding numbers, oriented twards the new position.*/
-position: absolute;/*It  is used to change the position of an element, based on the value that we set, relative to its parent element, if the parent is positioned. If not, it will be set relative to top left corner of the web page.*/
+/*******************************Position properties**************************/
+
+div{position: static;} 
+/*is the default position of an element.*/
+
+section{position: relative;
+    top: ;
+    right: ;
+    bottom: ;
+    left: ;
+} 
+/*is used to change the position of an element relative to its original position by adding numbers, oriented twards the new position.*/
+/*we can use top, right, bottom, left to change the position of an element relative to its original position.*/
+
+div{position: absolute;
+    top: ;
+    right: ;
+    bottom: ;
+    left: ;
+}
+/*It  is used to change the position of an element, based on the value that we set, relative to its parent element, if the parent is positioned. If not, it will be set relative to top left corner of the web page.*/
+/*position for the parent element should be relative, fixed or sticky.*/
+/*we can use top, right, bottom, left to change the position of an element relative to its parent element.*/
 /******In order to change the child position relative to the parent, we have to set a relative position for the parent.*****/
-z-index: 1;
-/*is used to change the order of elements. the higher the number, the more on top it will be.*/
-position: fixed; /*is used to change the position of an element relative to the browser window, and the element will always stay on top.*/
-/*position: sticky; is used to change the position of an element relative to its parent element until it reaches a certain point, then it will be fixed.*/
 
-/****************Responsive Website****************/
+section{position: fixed;
+    top: ;
+    right: ;
+    bottom: ;
+    left: ;}
+ /*is used to change the position of an element relative to the browser window, and the element will always stay on top.*/
+div{position: sticky;
+    top: ;
+    right: ;
+    bottom: ;
+    left: ;}
+/*is used to change the position of an element relative to its parent element until, by scrolling, it reaches a specific point, and hit the top, then it will be fixed.*/
+/*position for the parent element should be relative, fixed or sticky.*/
+/*we can use top, right, bottom, left to change the position of an element relative to its parent element.*/
+
+/*******************************Transition Property**************************/
+
+/*Transition property is used to change the style of an element when a specific event happens.*/
+/*We can use it to change the style of an element when we hover over it, or when we click on it, ...*/
+.circle{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    transition-property: width, height, background-color, border-radius;
+    /* transition-property is used to change the style of an element when a specific event happens.*/
+    transition-duration: 1s;
+    /* transition-duration is used to set the duration of the transition.*/
+    transition-timing-function: ease-in-out;
+    /* transition-timing-function is used to set the timing function of the transition.*/
+    transition-delay: 1s;
+    /* transition-delay is used to set the delay of the transition.*/
+}
+/*we can also write it like this:*/
+.circle{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    transition: width 1s ease-in-out 1s, height 1s ease-in-out 1s, background-color 1s ease-in-out 1s, border-radius 1s ease-in-out 1s;
+}
+.circle:hover{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    border-radius: 0%;
+}
+/*According to the above example, when we hover over the circle, the width and height will change to 200px, the background-color will change to blue, and the border-radius will change to 0% in 1s, and the transition will start after 1s.*/
+
+section{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transition: margin 2s;
+}
+/*we can use margin also as a transition property.*/
+section:hover{
+    margin-left: 200px;
+}
+
+div:nth-of-type(1){
+    transition-timing-function: ease-in;
+}
+/*nth-of-type is used to select the nth element of a specific type.*/
+div:nth-of-type(2){
+    transition-timing-function: ease-out;
+}
+div:nth-of-type(3){
+	transition-timing-function:  cubic-bezier(0.83, 0, 0.17, 1);
+}
+/*cube-bezier is used to change the timing function of the transition by using 4 numbers between 0 and 1.*/
+/*We can find the numbers by using thehttps://easings.net/ website or https://cubic-bezier.com/ website.*/
+
+
+
+
+/**********************Responsive Website***********************/
 
 /*We can use these four methods to make a responsive website:
 1- Media Queries
@@ -436,22 +546,4 @@ position: fixed; /*is used to change the position of an element relative to the 
 3- Css Flexbox
 4- External Frameworks like: Bootstrap*/
 
-/*****************Media Queries*****************/
-
-/*We have 3 general options for media queries: all, screen, print.*/
-
-@media(max-width: 600px;){
-    /*We can use media queries to change the style of a website based on the size of the screen.*/
-    /*we can use this link to find the size of different devices: https://www.mydevice.io/ */
-    /*This code means that if the size of the screen is less than 600px, the code inside will be excuted.*/
-}
-@media(max-width: 600px;) and (min-width: 400px;){
-   /*This code means that if the size of the screen is less than 600px and more than 400px, the code inside will be excuted.*/
-}
-
-/*Mobile Devices: 319px — 480px
-iPads and Tablets: 481px — 1200px
-Laptops: 1201px — 1600px
-Desktops: 1601px and more*/
-
-/*********************************************/
+/*****************Sth*****************/
