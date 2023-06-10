@@ -320,7 +320,14 @@ body{
     margin: 0px;
 }
 
-/**********Hint-emojies**********/
+/**********Margin:Very useful************/
+
+h1{
+    margin: 20px auto;
+}
+/* By defining a margin(for a block level element like h1) of any number for top and bottom and auto for right and left, we can set that element to the center of the page
+
+/***************************Hint-emojies**************************/
 
 /*We can use emojies in our web page by using their unicode. for example:*/
 /*U+1F600 is the unicode for the emoji 😁*/
@@ -535,7 +542,43 @@ div:nth-of-type(3){
 /*cube-bezier is used to change the timing function of the transition by using 4 numbers between 0 and 1.*/
 /*We can find the numbers by using thehttps://easings.net/ website or https://cubic-bezier.com/ website.*/
 
+/********************************Transform Property******************************/
 
+/*The transform property in CSS allows you to rotate,scale,skew,or translate an element. It modifies the coordinate space of the CSS visual formatting model.*/
+/****when we use transform property it will be applied to all elements and contents of the parent or the element****/
+
+h1:nth-of-type(1){
+    transform: rotate(45deg);
+}
+/*by default by using rotate and the angel inside the parentheses , it will rotate the element around the center point.*/
+h1:nth-of-type(2){
+    transform-origin: bottom right;
+    transform: rotate(45deg);
+}
+/*by using trnsform-origin, it will rotate around the defined side*/
+
+section:first-of-type h1:nth-of-type(3){
+    transform: scale(0.5);
+}
+/* It changes the scale of an element in every axises by the number that is defined.*/
+
+section:first-of-type h1:nth-of-type(4){
+    transform:translateX(100px) ;  /*It will move the element on x axis to the right*/
+    transform: translateX(-100px);/*It will move the element on x axis to the left*/
+    transform: translatey(-100px);/*It will move the element on y axis upwards*/
+    transform:translatey(100px); /*It will move the element on y axis downwards*/
+    transform: translate(-200px,50px);/*It will move the element on x axis to the left and on y axis 50px downwards*/
+}
+
+section:nth-last-of-type(1) h1:nth-of-type(2){
+    transform: skewX(35deg);/*it will transform the element to an oblique shape, around x axis.*/ 
+    transform: skewY(40deg);/*it will transform the element to an oblique shape, around y axis.*/
+    transform: skew(20deg,30deg);/*it will transform the element to an oblique shape, around x and y axis.*/
+}
+
+section:nth-of-type(2){/*by only selecting the section, we can apply all changes to all elements and contents*/
+    transform: rotate(-20deg) scale(1.3) translateX(200px) skewX(15deg);/*by using space we can use different kind of values all together*/
+}
 
 
 /**********************Responsive Website***********************/
