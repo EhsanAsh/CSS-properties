@@ -614,7 +614,8 @@ section{
     /* It defines the position of the image that should be aligned with page. in this example it says that the pages should be initiated from the top side of the image.*/
     /*top, right, center ....*/
 
-    background: ;
-    /*we can use all values simoltaneously in one background property*/
+    background: center/cover url(https://unsplash.com/photos/CwMIG02Kxr0) no-repeat, blue, center/40% url(https://unsplash.com/photos/CwMIG02Kxr0);
+    /*we can use all values simoltaneously in one background property, and also we can use two backgrounds together.*/
+    /* The only important thing is that the order is not important unless we want to use background-size, in taht case we have to bring position before size and use slash.*/
 
 }
