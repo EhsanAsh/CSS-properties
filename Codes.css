@@ -600,13 +600,21 @@ button{
 /*we can use pointer to change the cursor to a hand when we hover over a button or a link.*/
 /*we can use it to change the cursor to a crosshair, a help, a wait, a zoom-in, a zoom-out, ...*/
 
+/******************************Background************************/
 
-/**********************Responsive Website***********************/
+/* We can use different values with background*/
+section{
+    background-color: #ff0000;
+    background-image: url(https://unsplash.com/photos/CwMIG02Kxr0) no-repeat;
+    /*repeat is another value for background which we can set to no-repeat*/
+    background-size:cover;
+    /*we can use cover, contain, auto and ... */
+    /*cover will cover the whole page but contain will repeat the image if necessary*/
+    background-position: top;
+    /* It defines the position of the image that should be aligned with page. in this example it says that the pages should be initiated from the top side of the image.*/
+    /*top, right, center ....*/
 
-/*We can use these four methods to make a responsive website:
-1- Media Queries
-2- Css grid
-3- Css Flexbox
-4- External Frameworks like: Bootstrap*/
+    background: ;
+    /*we can use all values simoltaneously in one background property*/
 
-/*****************Sth*****************/
+}
