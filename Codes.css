@@ -617,5 +617,16 @@ section{
     background: center/cover url(https://unsplash.com/photos/CwMIG02Kxr0) no-repeat, blue, center/40% url(https://unsplash.com/photos/CwMIG02Kxr0);
     /*we can use all values simoltaneously in one background property, and also we can use two backgrounds together.*/
     /* The only important thing is that the order is not important unless we want to use background-size, in taht case we have to bring position before size and use slash.*/
-
 }
+
+/*The possible values for background-position are:
+
+Length values: Any length value, like pixels (px), em, or percentages (%). For instance, background-position: 50px 100px; will position the background image 50px from the left and 100px from the top of the container.
+
+Percentage values: The position of the upper left corner of the image is placed at that same percentage position in the container. For instance, background-position: 50% 50%; will center the image in the container.
+
+Keyword values: The following keywords can be used: top, right, bottom, left, and center. You can use one keyword for the horizontal position (left or right), and one for the vertical position (top or bottom). For instance, background-position: right top;.
+
+Multiple values: If you are using multiple background images, you can specify a position for each image, separated by commas. For example, background-position: 50px 100px, center;.
+
+Global keywords: inherit, initial, and unset. */
