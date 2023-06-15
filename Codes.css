@@ -275,14 +275,6 @@ p{
 }
 /* we can make a border, then change the border radius to 50% to make a circle around an image.*/
 
-/*********Image*********/
-
-img{
-    width:50%;
-    margin-left: 25%;
-    /*Hint: Horizontally center a div by giving it a width of 50% and a margin-left of 25%.*/
-}
-
 /******Box Model:Padding********/
 
 /*Padding area is the area between the content area and the border.*/
