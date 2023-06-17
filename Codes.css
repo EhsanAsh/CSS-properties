@@ -350,6 +350,36 @@ element{display: inline-block;}
 element{display: none;}
 /*none elements are not visible and they don't take up any space.*/
 
+/*******here are examples of the most common and important HTML tags categorized by their default CSS display property values:
+
+Block elements - These elements take up the full width available, and have a new line before and after them.
+
+<div>
+<h1>, <h2>, <h3>, <h4>, <h5>, <h6>
+<p>
+<form>
+<header>, <footer>, <section>, <article>
+<nav>
+<ul>, <ol>, <li>
+<table>
+Inline elements - These elements do not start on a new line and only take up as much width as necessary.
+
+<span>
+<a>
+<img> (though often treated as inline-block)
+<button>
+<input>
+<label>
+<strong>, <b>
+<em>, <i>
+<sub>, <sup>
+Inline-block elements - These elements are similar to inline elements, but they can have a width and height.
+
+<img> (commonly treated as inline-block even though it defaults as inline)
+<button> (though often treated as inline-block)
+<textarea>
+<select>*/
+
 /**********Setting Layouts//Float Properties**********/
 
 element{float: left;}
@@ -622,3 +652,34 @@ Keyword values: The following keywords can be used: top, right, bottom, left, an
 Multiple values: If you are using multiple background images, you can specify a position for each image, separated by commas. For example, background-position: 50px 100px, center;.
 
 Global keywords: inherit, initial, and unset. */
+
+/**********Very important example of a photosite**********/
+
+/*we can use the following code to make a photosite:*/
+/*image and nav, both are descendants of body*/
+img {
+    width: 30%;
+    /*by giving the images a width of 30% of parent, which is body, we can fit 3 images in a row, with 10% left. then if we wnat to add margin to left and right side of each image, we can do that by giving each image a margin of 1.6666666% which is 10% divided by 6. because we have 3 images in a row, we have 6 margins, 3 on the left and 3 on the right. so we divide 10% by 6 to get the margin for each image. */
+
+    /* margin: 1.6666666%; */
+
+    margin: calc(10%/6);
+    /*instead of above solution, we can use calc() function to calculate the margin for each image. we can do this by giving each image a margin of 10% divided by 6. */
+}
+
+nav {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    border-bottom: 2px solid #f1f1f1;
+    width: 30%;
+    margin-left: calc(10%/6);
+    padding: 1.2em 0;
+}
+
+/*  <img src="http://c1.staticflickr.com/9/8450/8026519634_f33f3724ea_b.jpg"><img
+        src="http://c2.staticflickr.com/8/7218/7209301894_c99d3a33c2_h.jpg"><img
+        src="http://c2.staticflickr.com/8/7231/6947093326_df216540ff_b.jpg">
+    -- if we move each image to a new line, there will be a space between them that ruins all of styles and specificatons that we added to the page. so we should put all of them in one line without any space between them.*/
+
+    /******************Sth******************/
