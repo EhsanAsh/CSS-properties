@@ -682,4 +682,70 @@ nav {
         src="http://c2.staticflickr.com/8/7231/6947093326_df216540ff_b.jpg">
     -- if we move each image to a new line, there will be a space between them that ruins all of styles and specificatons that we added to the page. so we should put all of them in one line without any space between them.*/
 
-    /******************Sth******************/
+/******************Flexbox(flexibale box)******************/
+
+    /*Flexbox is used to make a responsive website.*/
+    /*We can use it to make a responsive navbar, a responsive footer , any kind of container*/
+    /*We can use it to make a responsive website for any device, like mobile, tablet, laptop, ...*/
+    /*We can use it to make a responsive website for any screen size, like 320px, 768px, 1024px, ...*/
+    /*with flexbox, we can divide a container into different parts and set the size of each part.*/
+/*Fexbox has two parts: container and items.*/
+/*Flexbox properties are used for the container and items properties are used for the items inside the container.*/
+
+/*Flexbox properties:*/
+    section{
+        display: flex;
+    }
+/*display flex is used to make a container a flexbox.*/
+
+/*A flexbox has two axises: main axis and cross axis.*/
+/*By default, the main axis is horizontal and the cross axis is vertical.*/
+/* by default, the main axis is from left to right and the cross axis is from top to bottom.*/
+/*We can change the main axis to vertical and the cross axis to horizontal.*/
+/*We can change the main axis to right to left and the cross axis to bottom to top.*/
+
+section{
+    flex-direction: row;
+}
+/*by default the flex-direction is row.*/
+/*flex-direction is used to change the direction of the main axis.*/
+/*we can use row, row-reverse, column, column-reverse.*/
+/*row is used to set the main axis from left to right and the cross axis from top to bottom.*/
+/*row-reverse is used to set the main axis from right to left and the cross axis from top to bottom.*/
+/*column is used to set the main axis from top to bottom and the cross axis from left to right.*/
+/*column-reverse is used to set the main axis from bottom to top and the cross axis from left to right.*/
+
+section{
+    justify-content: flex-start;
+}
+/*justify-content is used to change the alignment of the items on the main axis.*/
+/*we can use flex-start, flex-end, center, space-between, space-around, space-evenly.*/
+/*flex-start is used to align the items to the start of the main axis.*/
+/*flex-end is used to align the items to the end of the main axis.*/
+/*center is used to align the items to the center of the main axis.*/
+/*space-between is used to align the items with equal space between them.*/
+/*space-around is used to align the items with equal space around them.*/
+/*space-evenly is used to align the items with equal space around and between them.*/
+
+/* If we want to change the alignment of the items on the cross axis, we have to set flex-direction to column or column-reverse. then if we set justify-content, it will change the alignment of the items on the cross axis.*/
+/*If we set flex-direction to row or row-reverse, justify-content will change the alignment of the items on the main axis.*/
+/* Actually the justify content is set for the main axis.if we change the main axis to vertical, the justify-content will change the alignment of the items on the cross axis.*/
+
+section{
+    flex-wrap: wrap;
+}
+/*flex-wrap is used to change the wrap of the items in towards the cross axis.*/
+/*we can use wrap, nowrap, wrap-reverse.*/
+/*if we set flex-wrap to wrap, the items will wrap to the next line if necessary.*/
+/*if we set flex-wrap to nowrap, the items will not wrap to the next line.*/
+/*if we set flex-wrap to wrap-reverse, the items will wrap to the next line if necessary, but the order of the items will be reversed.*/
+
+/***1- if  we set the flex-direction to row, main axis is left to right, and the cross axis is top to bottom, thus the direction is from left to right. so if we set the flex-wrap to wrap, concidering that the cross axis is top to bottom, the items will wrap twards the cross axis, and the cross axis is top to bottom, so the items will wrap to the next line downwards.*/
+
+/***2- if we set the flex-direction to row-reverse, main axis is right to left, and the cross axis is top to bottom, thus the direction is from right to left. so if we set the flex-wrap to wrap, concidering that the cross axis is top to bottom, the items will wrap twards the cross axis, and the cross axis is top to bottom, so the items will wrap to the next line downwards.*/
+
+/***3- if we set the flex-direction to column, main axis is top to bottom, and the cross axis is left to right, thus the direction is from top to bottom. so if we set the flex-wrap to wrap, concidering that the cross axis is left to right, the items will wrap twards the cross axis, and the cross axis is left to right, so the items will wrap to the next line to the right.*/
+
+/***4- if we set the flex-direction to column-reverse, main axis is bottom to top, and the cross axis is left to right, thus the direction is from bottom to top. so if we set the flex-wrap to wrap, concidering that the cross axis is left to right, the items will wrap twards the cross axis, and the cross axis is left to right, so the items will wrap to the next line to the right.*/
+
+/***5- In any of above conditions if we set the flex-wrap to wrap-reverse, the items will wrap to the next line, but the order of the items will be reversed.*/
