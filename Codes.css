@@ -749,3 +749,79 @@ section{
 /***4- if we set the flex-direction to column-reverse, main axis is bottom to top, and the cross axis is left to right, thus the direction is from bottom to top. so if we set the flex-wrap to wrap, concidering that the cross axis is left to right, the items will wrap twards the cross axis, and the cross axis is left to right, so the items will wrap to the next line to the right.*/
 
 /***5- In any of above conditions if we set the flex-wrap to wrap-reverse, the items will wrap to the next line, but the order of the items will be reversed.*/
+
+section{
+    align-items: flex-start;
+}
+/*align-items is used to change the alignment of the items on the cross axis.*/
+/*we can use flex-start, flex-end, center, baseline, stretch.*/
+/*flex-start is used to align the items to the start of the cross axis.*/
+/*flex-end is used to align the items to the end of the cross axis.*/
+/*center is used to align the items to the center of the cross axis.*/
+/*baseline is used to align the items to the baseline of the text inside the items.*/
+/*stretch is used to stretch the items to fill the whole container.*/
+
+section{
+    align-content: flex-start;
+}
+/*align-content is used to change the alignment of the items on the cross axis when the items are wrapped.*/
+/*we can use flex-start, flex-end, center, space-between, space-around, space-evenly, stretch.*/
+/*it works like justify-content on spaces, but it works on the cross axis when the items are wrapped.*/
+/*values are as same as justify-content.*/
+
+/*******Items properties:*******/
+
+div:nth-child(5){
+    align-self: flex-start;
+}
+/*align-self is used to change the alignment of an item or specific items on the cross axis.*/
+/*we can use flex-start, flex-end, center, baseline, stretch.*/
+/*baseline is used to align the items to the baseline of the text inside the items.*/
+/*stretch is used to stretch the items to fill the whole container.*/
+
+div:nth-child(6){
+    flex-basis: 400px;
+}
+/*flex-basis is used to set the size of an item on the main axis.*/
+/*we can use px, %, em, rem, ...*/
+/*we can use it to set the width or height of an item on the main axis.*/
+
+div:nth-child(7){
+    flex-grow: 1;
+}
+/*flex-grow is used to determine how much an item should grow on the main axis if there is extra space. actually this property defines how the extra space should be distributed among the items if there is any.*/
+/*we can set it for just one item or all items.*/
+/*we can use any number, but the default value is 0.*/
+/*if we set it to 0, the item will not grow.*/
+/*if we set it to 1, the item will grow as much as it can.*/
+/*if we set it to 2 for one item and 1 to another item, the item will grow twice as much as the other items. it's like dividing a free space in tree equal parts and giving two parts to one item and one part to another item.*/
+
+/**********max-min for width&height**********/
+section div:{
+    height: 100px;
+    width: 200px;
+    max-height: 100px;
+    max-width: 400px;
+    min-width: 200px;
+    flex-basis: 300px;
+
+}
+/* we can set max-width and min-width for all or every individual items, by doing this when we set the flex-grow foe example for two items, the items will grow until they reach the max-width, and then they will stop growing. if we set the flex-grow to 1 for one item and 2 for another item, the item with flex-grow 2 will grow twice as much as the other item, but when it reaches the max-width, it will stop growing. it's the same for min-width.*/
+
+/*we can set max-height and min-height as well.*/
+
+/********************************/
+
+div:nth-child(8){
+    flex-shrink: 1;
+}
+/*flex-shrink is used to determine how much an item should shrink on the main axis if there is not enough space. we will not define any pxs we are just defining the ratio of shrinking reletive to other items.*/
+
+selection div{
+    flex: 1 1 200px;
+}
+/*we can use flex to set flex-grow, flex-shrink and flex-basis all together.*/
+/*The order is flex-grow, flex-shrink, flex-basis when there are three values.*/
+/*The order is flex-grow and flex-shrink or flex-grow and flex-basis when there are two values.*/
+/*if there is one value for flex and it's with a unit like px, it will be flex-basis, and if it's just a number(unitless), it will be flex-grow by default.*/
+
