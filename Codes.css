@@ -825,3 +825,145 @@ selection div{
 /*The order is flex-grow and flex-shrink or flex-grow and flex-basis when there are two values.*/
 /*if there is one value for flex and it's with a unit like px, it will be flex-basis, and if it's just a number(unitless), it will be flex-grow by default.*/
 
+/**********************Responsive Design**********************/
+
+/*Responsive design is used to make a website responsive for different devices and screen sizes.*/
+/*We can use media queries to make a website responsive.*/
+/*We can use media queries to change the style of an element for different devices and screen sizes, like mobile, tablet, laptop, ... or set the screen to landscape or portrait.*/
+
+@media(width: 768px){
+    div{
+        color: red;
+    }
+}
+/*This is the main structure of a media query. inside tha parantheses we can set the width, height, orientation, ...*/
+/*It says that if the width of the screen is exactly768px, the color of the div will be red.*/
+/*It's not that common. the more common ones are:*/
+@media(max-width: 768px){
+    div{
+        color: red;
+    }
+}
+/*It says that if the width of the screen is less than or equal to 768px, the color of the div will be red.*/
+@media(min-width: 768px){
+    div{
+        color: red;
+    }
+}
+/*It says that if the width of the screen is more than or equal to 768px, the color of the div will be red.*/
+/* the width here is actually the width of the viewport, not the width of the screen.*/
+/*viewport is the current visible area of a web page.*/
+/*screen is the physical screen of the device like when we use a laptop, the screen is the physical screen of the laptop, but the viewport is the visible area of the web page on the screen.*/
+
+@media(max-width: 768px) and (min-width: 320px){
+    div{
+        color: red;
+    }
+}
+/*we can use and to combine two media queries.*/
+/*It says that if the width of the screen is less than or equal to 768px and more than or equal to 320px, the color of the div will be red.*/
+
+/*the usual simple way:*/
+h1{
+    color: red;
+}
+@media(min-width:500px){
+    h1{
+        color: blue;
+    }
+    h2{
+        font-size: 1rem;
+    }
+}
+@media(min-width:1000px){
+    h1{
+        color: rgb(0, 255, 13);
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+}
+@media(min-width:1500px){
+    h1{
+        color: rgb(255, 0, 255);
+    }
+    h2{
+        font-size: 2rem;
+    }
+}
+
+/*The much more common way:*/
+
+/*Defining the min-width values in media queries is subjective and depends on your specific design requirements and breakpoints. However, there are some common approaches and widely used breakpoints that you can consider when setting the min-width values. These breakpoints are based on common device sizes and can serve as a starting point for creating responsive designs. Here are a few commonly used min-width values:
+
+Small mobile devices (portrait orientation):
+min-width: 320px or min-width: 375px (for devices like iPhones)
+Mobile devices (landscape orientation) and small tablets:
+min-width: 480px or min-width: 568px (for landscape mobile devices)
+min-width: 768px (for small tablets like iPads)
+Tablets and medium-sized screens:
+min-width: 1024px (for larger tablets and some laptops)
+min-width: 1280px (common for desktop and laptop screens)
+Large screens and high-resolution displays:
+min-width: 1440px (common for large desktop monitors)
+min-width: 1920px (for high-resolution displays and wide screens)
+Extra-large screens:
+min-width: 2560px (for ultra-wide screens and large displays)
+Keep in mind that these are general suggestions, and you should adapt them based on your specific design and target audience. It's essential to test your website on different devices and adjust the breakpoints accordingly to ensure optimal responsiveness.*/
+
+/* the first value for the first media query based on min-width should typically be the breakpoint for smaller mobile devices. A common starting point is:
+
+// X-Small devices (portrait phones, less than 576px)
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { ... }*/
+
+/*This method is whats described as mobile-first. We first design for the lowest viewport and move our way up to larger
+
+displays.
+
+An alternative way is to use max-width. This allows us to go the other direction. Design for desktop first and move
+
+down to smaller screen sizes.
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { ... }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { ... }
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { ... }
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) { ... }
+
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) { ... }*/
+
+/*The desktop-first approach is the opposite of the mobile-first approach. It means that we start with the desktop version and then we make it responsive for smaller devices.*/
+/*The desktop-first approach is not that common.*/
+
+    @media (orientation: landscape){
+        h1 {
+            font-size: 4em;
+        }
+        nav, nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    /*we can use the orientation property to change the style of an element when the screen is in landscape or portrait mode.*/
+    /*it is not that common.*/
