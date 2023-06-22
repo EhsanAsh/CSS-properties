@@ -977,3 +977,14 @@ down to smaller screen sizes.
     }
     /*we can use the orientation property to change the style of an element when the screen is in landscape or portrait mode.*/
     /*it is not that common.*/
+
+/***************Hint***************/
+div{
+    min-height: 100vh;
+    width:100%;
+	max-width: 960px;
+}
+/*by setting the width of a container to 100% and setting the max-width to 960px, we can make the container responsive for different devices and screen sizes.*/
+/*width always will be 100% of the parent, but max-width will be 100% of the parent until it reaches 960px, then it will stop growing.*/
+/*by setting the min-height to 100vh, we can make the container responsive for different devices and screen sizes.*/
+/*vh is used to set the size of an element relative to the height of the viewport, and 100vh means that the height of the element will be 100% of the height of the viewport.*/
