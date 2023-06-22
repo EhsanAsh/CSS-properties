@@ -446,6 +446,16 @@ h2{
 /*by setting the font size to 1.5rem it will change by changing the font-size of the root element, and padding will change by changing the font-size of the element itself.*/
 /* by using rem we can make our website responsive and change everything relative to the font-size of the root element which is the html element and we solve the problem of em.*/
 
+/**********vw and vh**********/
+section{
+    width: 100vw;
+    min-height: 100vh;
+}
+/*vw and vh are used to set the size of an element relative to the viewport.*/
+/*viewport is the visible area of a web page.*/
+/*vw is used to set the size of an element relative to the width of the viewport.*/
+/*vh is used to set the size of an element relative to the height of the viewport.*/
+
 /*******************************The Alpha channel & Opacity*******************************/
 
 /*The Alpha channel is used to change the transparency of an element.*/
